@@ -10,7 +10,7 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	cout << "Hello" << endl;
+	cout << "Hehe" << endl;
 
 	return 0;
 }
