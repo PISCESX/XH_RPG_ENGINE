@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include <Core.h>
 #include <iostream>
 
 using namespace std;
@@ -10,8 +10,11 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	cout << "Hehe" << endl;
+	Engine::Core::CoreManager Core;
 
+	Core.Operation.Print(Core.Operation.WaitInput());
+
+	/* Ö÷º¯Êý·µ»Ø */
 	return 0;
 }
 
