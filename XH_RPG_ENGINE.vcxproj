@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\开发板\XH_Pad\APP\XH_RPG_ENGINE\Core;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Scene;$(ProjectDir)Core;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -87,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Core.cpp" />
+    <ClCompile Include="Scene\Event.cpp" />
+    <ClCompile Include="Scene\Scene.cpp" />
+    <ClCompile Include="Scene\UI.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="XH_RPG_ENGINE.cpp" />
   </ItemGroup>

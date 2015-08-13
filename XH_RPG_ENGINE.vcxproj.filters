@@ -16,6 +16,9 @@
     <Filter Include="Core">
       <UniqueIdentifier>{3530e31b-d250-4089-ae6d-7426194ba8e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{bec0732a-04ce-4b16-8735-ad2122e2edf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -37,6 +40,15 @@
     </ClCompile>
     <ClCompile Include="Core\Core.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\UI.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Event.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
