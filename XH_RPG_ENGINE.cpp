@@ -7,19 +7,25 @@
 #include "UI.h"
 #include "Scene.h"
 
-
 using namespace std;
 using namespace Engine;
 
 
+Engine::Core::CoreManager CoreManager;
+
+Engine::Scene::SceneManager _SceneManager(CoreManager);
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Engine::Core::CoreManager Core;
 
-	Engine::Scene::SceneManager Scene(&Core);
+	Error e = _SceneManager.Field.Show(1);
+	e = _SceneManager.Event.UI.Show(1);
+	//SceneManger.Event.UI.WaitInput();
 
-	Error e = Scene.Field.Show(1);
-	e = Scene.Event.Show(1);
+	_SceneManager.Event.Script.LoadFile(".\\Config\\Scene\\1\\DuanYu.event");
+	_SceneManager.Event.Script.Run();
+
+	_SceneManager.Event.Script.CheckError();
 
 	for ( ; ; );
 

@@ -3,11 +3,60 @@
 #ifdef WIN32
 #include <stdio.h>
 #include <fstream>
+#include <sstream>
 #include <cstdarg>
+#include "windows.h"
 #endif // WIN32
 
 using namespace Engine;
 using namespace Engine::Core;
+
+/************************************************************************/
+/* 引擎各类的基类                                                        */ 
+/************************************************************************/
+IErrorable::IErrorable()
+{
+	ErrorStatus = No_Error;
+}
+
+IErrorable::~IErrorable()
+{
+
+}
+
+Error IErrorable::GetError(void)
+{
+	return this->ErrorStatus;
+}
+
+void IErrorable::CheckError(void)
+{
+	if (this->ErrorStatus != No_Error){
+		/* 如果出现问题，打印调试信息并停止 */
+#ifdef _WIN32
+		printf(this->ErrorInf().c_str());
+#endif
+		while(1);
+	}else{
+		this->ClearError();
+	}
+}
+
+String IErrorable::ErrorInf(void)
+{
+	switch (this->ErrorStatus)
+	{
+	case No_Error : return "\n无错误\n";
+	case Script_FindFailed : return "\n脚本解释错误:语句不完整\n";
+	case Event_ReadFailed : return "\nEvent_ReadFailed\n";
+	default : return "\n未知错误\n";
+	}
+}
+
+void IErrorable::ClearError(void)
+{
+	this->ErrorStatus = No_Error;
+}
 
 /************************************************************************/
 /* 扩展标准库String类                                                    */ 
@@ -90,6 +139,29 @@ String::~String()
 
 }
 
+uint32 String::ToUint32(void)
+{
+	std::stringstream ss;
+	uint32 Uint32;
+	ss << (*this);
+	ss >> Uint32;
+
+	return Uint32;
+}
+
+void String::trim(void)   
+{  
+	if ( this->empty() ){  
+		return ;  
+	}
+	/* 去除空格 */
+	this->erase(0,this->find_first_not_of(" "));  
+	this->erase(this->find_last_not_of(" ") + 1);    
+	/* 去除缩进 */
+	this->erase(0,this->find_first_not_of("\t"));  
+	this->erase(this->find_last_not_of("\t") + 1);    
+}  
+
 Error String::Format(const char* Format, ... )
 {
 	/* 字符处理缓冲区 */
@@ -107,29 +179,29 @@ Error String::Format(const char* Format, ... )
 			Format ++;
 			switch (*Format)
 			{
-				case 'd' : 
+			case 'd' : 
 				{
 					int number = va_arg(arg_list,int);
 					sprintf(c_String,"%d",number);
 					this->append(c_String);
 					break;
 				}
-				case 'f' : 
+			case 'f' : 
 				{
 					double fnumber = va_arg(arg_list,double);
 					sprintf(c_String,"%f",fnumber);
 					this->append(c_String);
 					break;
 				}
-				case 's' :
+			case 's' :
 				{
 					char* pString = va_arg(arg_list,char*);
 					sprintf(c_String,"%s",pString);
 					this->append(c_String);
 					break;
 				}
-				default:
-					break;
+			default:
+				break;
 			}
 
 			/* 不清缓存会与非格式化字符冲突 */
@@ -195,6 +267,15 @@ void OperationManeger::Print(String Content)
 	/* 底层操作，根据平台实现 */
 #ifdef WIN32
 	printf(Content.c_str());
+
+#endif // WIN32
+}
+
+void OperationManeger::Clear(void)
+{
+	/* 底层操作，根据平台实现 */
+#ifdef WIN32
+	system("cls");
 
 #endif // WIN32
 }
@@ -322,8 +403,14 @@ String FileManager::GetLine(void)
 	String Line;
 
 	/* 底层操作，根据平台实现 */
-	Line.resize(1000);
-	((fstream*)ThenFile)->getline(&Line[0],1000);
+	static char Line_c[1000] = {0};
+	((fstream*)ThenFile)->getline(&Line_c[0],1000);
+	Line += Line_c;
+
+	if (Line != "END FILE"){
+		/* 所以可读配置文件均以"END FILE结尾" */
+		Line.erase(Line.find("\r"),1);
+	}
 
 	return Line;
 }
@@ -342,4 +429,14 @@ String FileManager::GetAll(void)
 	}
 
 	return All;
+}
+
+Bool FileManager::IsEnd(void)
+{
+	Bool End;
+
+	/* 底层操作，根据平台实现 */
+	End = (Bool)((fstream*)ThenFile)->eof();
+
+	return End;
 }

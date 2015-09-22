@@ -13,11 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{bec0732a-04ce-4b16-8735-ad2122e2edf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{dc48b379-aa03-4d06-9e75-8db0ee585191}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{3530e31b-d250-4089-ae6d-7426194ba8e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{bec0732a-04ce-4b16-8735-ad2122e2edf6}</UniqueIdentifier>
+    <Filter Include="头文件\Engine">
+      <UniqueIdentifier>{cba0e040-525c-4c74-8fa3-f6fac45fd9fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +34,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Event.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\UI.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Core.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Script\XH_Script.h">
+      <Filter>头文件\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,5 +74,16 @@
     <ClCompile Include="Scene\Event.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Script\XH_Script.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="XH_RPG_ENGINE.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

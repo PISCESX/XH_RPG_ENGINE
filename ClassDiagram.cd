@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Engine::String" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAgAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::IErrorable">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQCAAAABAAAAAAICAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::OperationManeger" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAQAAAAAAAAAAAAAAAAAAAAAEABEAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::FileManager" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAIAAAAAAAEAAAAACAAAAAAgAAAICABAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::CoreManager" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAEAAAAAAAAAAAAAAEAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::SceneManager" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAggQ=</HashCode>
+      <FileName>Scene\Scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::EventCmd" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAgAAAAAAABAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Scene\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::EventScript" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAEEAAAAAABEAAAAAAEAAAAAAAAAAAIBAA=</HashCode>
+      <FileName>Scene\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::EventManager" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgEAA=</HashCode>
+      <FileName>Scene\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::UI" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAIAAAEAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Scene\UI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::FieldManager" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Scene\UI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Scene::EventUIManager" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Scene\UI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::Script::Expression" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Script\XH_Script.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::Script::CmdExpression" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Script\XH_Script.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::Script::RepeatExpression" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgEAAAAAAAJAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Script\XH_Script.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::Script::Sentence" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Script\XH_Script.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine::Core::Script::XH_Script" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAAAAgAAAAAAABMAAAAAAAAAAAAAAAAAAAAQI=</HashCode>
+      <FileName>Script\XH_Script.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="Engine::Bool" Collapsed="true">
+    <Position X="1.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Engine::uint32" Collapsed="true">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Engine::Error" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="Engine::xh_bool" Collapsed="true">
+    <Position X="1.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Engine::xh_error" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAgAAAAIAgAAAAAACCAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Core.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

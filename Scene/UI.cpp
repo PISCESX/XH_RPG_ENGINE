@@ -11,9 +11,9 @@ using namespace Engine::Scene;
 using namespace std;
 
 
-UI::UI(Core::CoreManager* Core)
+UI::UI(Core::CoreManager& CoreManager) : CoreManager(CoreManager)
 {
-	this->Core = Core;
+	
 }
 
 UI::~UI()
@@ -24,7 +24,7 @@ UI::~UI()
 /************************************************************************/
 /* 行走场景界面                                                          */
 /************************************************************************/
-FieldManager::FieldManager(Core::CoreManager* Core) : UI(Core)
+FieldManager::FieldManager(Core::CoreManager& CoreManager) : UI(CoreManager)
 {
 
 }
@@ -38,12 +38,12 @@ Error FieldManager::Show(uint32 Number)
 {
 
 	String FileName(".\\Config\\Scene\\%d\\Field.ini",Number);
-	Bool Fail = Core->File.Open(FileName);
+	Bool Fail = CoreManager.File.Open(FileName);
 	if (Fail){
 		return Field_NoFile;
 	}
 
-	String FieldStr = Core->File.GetAll();
+	String FieldStr = CoreManager.File.GetAll();
 	String sNumber("#%d#",Number);
 
 	string::size_type Position;
@@ -57,7 +57,7 @@ Error FieldManager::Show(uint32 Number)
 		if (Position != string::npos){
 			Finish = Position;
 			String new_str = FieldStr.substr(Start,Finish - Start);
-			Core->Operation.Print(new_str);
+			CoreManager.Operation.Print(new_str);
 		}else{
 			return Field_NotFound;
 		}
@@ -65,14 +65,14 @@ Error FieldManager::Show(uint32 Number)
 		return Field_NotFound;
 	}
 	
-	Core->File.Close();
+	CoreManager.File.Close();
 	return No_Error;
 }
 
 /************************************************************************/
 /* 事件界面界面                                                          */
 /************************************************************************/
-EventUIManager::EventUIManager(Core::CoreManager* Core) : UI(Core)
+EventUIManager::EventUIManager(Core::CoreManager& CoreManager) : UI(CoreManager)
 {
 
 }
@@ -92,7 +92,7 @@ Error EventUIManager::Show(uint32 SceneNumber)
 	char Return[50];
 
 	GetPrivateProfileString("Config","SceneName","",Return,50,FileName_c);
-	Core->Operation.Print("在[%s]你发现了:\n",Return);
+	CoreManager.Operation.Print("在[%s]你发现了:\n",Return);
 
 	DWORD EventNumber = GetPrivateProfileInt("Config","EventNumber",0,FileName_c);
 	for (uint32 i = 0; i < EventNumber; i++)
@@ -101,7 +101,7 @@ Error EventUIManager::Show(uint32 SceneNumber)
 		sprintf(sEventSection,"Event_%d",i);
 		GetPrivateProfileString(sEventSection,"Name","",Return,50,FileName_c);
 		if (*Return != '\0'){
-			Core->Operation.Print("[%d] %s\n",i,Return);
+			CoreManager.Operation.Print("[%d] %s\n",i,Return);
 		}else{
 			return Event_ReadFailed;
 		}
@@ -110,4 +110,11 @@ Error EventUIManager::Show(uint32 SceneNumber)
 #endif // WIN32
 	
 	return No_Error;
+}
+
+String EventUIManager::WaitInput(void)
+{
+	CoreManager.Operation.Print("请输入指令:");
+
+	return CoreManager.Operation.WaitInput();
 }
